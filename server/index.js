@@ -18,13 +18,12 @@ require('../server/cronJob');
 // Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 5000;
-const SOCKET_PORT = process.env.SOCKET_PORT || 3001;
 
-// Create HTTP server for Socket.io
+// Create HTTP server and attach Socket.io to it
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173","https://digital-academic-library.vercel.app"], // Vite default port
+    origin: ["http://localhost:5173", "https://digital-academic-library.vercel.app"],
     methods: ["GET", "POST"]
   }
 });
@@ -252,19 +251,14 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: 'Something went wrong!', error: err.message });
 });
 
-// Connect to MongoDB and start servers
+// Connect to MongoDB and start server
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('MongoDB connection established successfully');
     
-    // Start the Express server
-    app.listen(PORT, () => {
-      console.log(`API server is running on port ${PORT}`);
-    });
-    
-    // Start the Socket.io server
-    server.listen(SOCKET_PORT, () => {
-      console.log(`Socket.io server running on port ${SOCKET_PORT}`);
+    // Start the server with Socket.io
+    server.listen(PORT, () => {
+      console.log(`Server running on port ${PORT} with Socket.io enabled`);
     });
   })
   .catch((err) => {
