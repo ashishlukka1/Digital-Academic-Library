@@ -1,0 +1,322 @@
+.auth-container-sgnup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background-color: #121212; */
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 500px;
+  /* background-color: #1e1e1e; */
+  border-radius: 12px;
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); */
+  padding: 30px;
+  transition: height 0.3s ease;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-header h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.auth-header p {
+  color: #b0b0b0;
+  font-size: 16px;
+}
+
+/* Google Auth Button Styling */
+.auth-alternatives {
+  margin-bottom: 24px;
+}
+
+.google-auth-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.google-auth-button:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: #b0b0b0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.divider span {
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+/* Google user info section */
+.google-user-info {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.auth-message {
+  margin-bottom: 15px;
+}
+
+.auth-info {
+  color: #b0b0b0;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.readonly-info {
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.readonly-input {
+  background-color: #a4a4a4 !important;
+  border: 1px solid #333 !important;
+  cursor: not-allowed;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  color: black;
+  font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group input[type="number"] {
+  background-color: #ffffffe9;
+  border: 1px solid #3d3d3d;
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: black;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.password-hint {
+  color: #8b8b8b;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  accent-color: #6366f1;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-item label {
+  color: #d0d0d0;
+  font-size: 14px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.auth-button {
+  background-color: #0a8c6a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: #d0d0d0;
+  border: 1px solid #3d3d3d;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.auth-button:hover {
+  background-color: #0a8c6a;
+}
+
+.secondary-button:hover {
+  background-color: #2d2d2d;
+  border-color: #4d4d4d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 20px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+/* Tag Input Styling */
+.tag-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.tag-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #2a3c5d;
+  border: 1px solid #3d4e70;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.tag-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b0b0b0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: 4px;
+  transition: color 0.2s;
+}
+
+.tag-remove:hover {
+  color: #ffffff;
+}
+
+.tag-input-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.tag-input-wrapper input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #3d3d3d;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.tag-add-button {
+  margin-left: 8px;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.tag-add-button:hover {
+  background-color: #4f46e5;
+}

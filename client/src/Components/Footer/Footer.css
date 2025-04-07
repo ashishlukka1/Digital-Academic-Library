@@ -1,0 +1,244 @@
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Footer Styles */
+.footer {
+  background-color: #0A192F;
+  color: #E6EDF3;
+  padding: 3rem 0 0;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Main Footer Content */
+.footer-content {
+  width: 100%;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  gap: 30px;
+}
+
+/* Three Column Layout */
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* First column - Library Info */
+.footer-column:nth-child(1) {
+  max-width: 380px;
+}
+
+/* Middle column - Library Hours */
+.footer-column:nth-child(2) {
+  max-width: 340px;
+}
+
+/* Third column - Connect */
+.footer-column:nth-child(3) {
+  max-width: 300px;
+}
+
+.footer-title {
+  color:white;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #58A6FF;
+}
+
+.footer-description {
+  color: #8B949E;
+  margin-bottom: 1.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Contact Information */
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #E6EDF3;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.icon {
+  margin-right: 0.75rem;
+  color: #58A6FF;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Hours Section */
+.hours-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.6rem;
+}
+
+.hours-table td {
+  font-weight: 300;
+  padding: 0;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.hours-table td:first-child {
+  color: #8B949E;
+  width: 150px;
+  padding-right: 10px;
+}
+
+.hours-table td:last-child {
+  color: #E6EDF3;
+}
+
+/* Connect Section */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  color: #E6EDF3;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgba(22, 27, 34, 0.8);
+  border: 1px solid #30363D;
+}
+
+.social-icons a:hover {
+  color: #58A6FF;
+  transform: translateY(-2px);
+  border-color: #58A6FF;
+  background-color: rgba(22, 27, 34, 1);
+}
+
+/* Additional connect text */
+.connect-text {
+  color: #8B949E;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: rgba(22, 27, 34, 0.7);
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(48, 54, 61, 0.6);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #8B949E;
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+  .footer-main {
+    gap: 40px 20px;
+  }
+  
+  .footer-column {
+    min-width: 280px;
+  }
+  
+  .footer-column:nth-child(3) {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-column:nth-child(1),
+  .footer-column:nth-child(2) {
+    flex-basis: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .footer-column,
+  .footer-column:nth-child(1),
+  .footer-column:nth-child(2),
+  .footer-column:nth-child(3) {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+  
+  .footer-title {
+    margin-bottom: 1.2rem;
+  }
+  
+  .hours-table td:first-child {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+  
+  .footer {
+    padding: 3rem 0 0;
+  }
+  
+  .footer-main {
+    gap: 30px;
+    padding-bottom: 2rem;
+  }
+  
+  .footer-title {
+    font-size: 1.2rem;
+  }
+  
+  .hours-table td {
+    font-size: 0.95rem;
+  }
+}

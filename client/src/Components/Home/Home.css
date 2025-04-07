@@ -1,0 +1,555 @@
+/* landing-styles.css - Enhanced version with Discover Research section */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --landing-bg-primary: #0a192f;
+  --landing-bg-secondary: #112240;
+  --landing-text-primary: #e6f1ff;
+  --landing-text-secondary: #8892b0;
+  --landing-accent-primary: #64ffda;
+  --landing-accent-secondary: #0a8c6a;
+  --landing-card-bg: rgba(16, 33, 65, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--landing-bg-primary);
+}
+
+.landing-svg-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.landing-svg-image:hover {
+  transform: scale(1.05);
+}
+
+.landing-page-container {
+  min-height: calc(100vh - 60px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--landing-bg-primary);
+  color: var(--landing-text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+.landing-content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .landing-content-wrapper {
+    flex-direction: column;
+  }
+}
+
+.landing-left-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Updated header tag with fixed width and blinking light */
+.landing-header-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 0.875rem;
+  color: var(--landing-accent-primary);
+  border: 1px solid var(--landing-accent-primary);
+  border-radius: 20px;
+  padding: 0.25rem 1rem;
+  padding-left: 0.75rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+  gap: 8px;
+}
+
+.landing-header-tag:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Blinking live indicator */
+.landing-live-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--landing-accent-primary);
+  position: relative;
+  animation: blinking 1.5s infinite;
+}
+
+/* Live indicator glow effect */
+.landing-live-indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--landing-accent-primary);
+  opacity: 0.4;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes blinking {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+.landing-main-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.landing-highlight {
+  color: var(--landing-accent-primary);
+  position: relative;
+}
+
+.landing-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--landing-accent-primary);
+  opacity: 0.4;
+}
+
+.landing-subheading {
+  font-size: 1.125rem;
+  color: var(--landing-text-secondary);
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.landing-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.landing-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.landing-primary-btn {
+  background-color: var(--landing-accent-primary);
+  color: var(--landing-bg-primary);
+  border: none;
+  box-shadow: 0 4px 10px rgba(100, 255, 218, 0.2);
+}
+
+.landing-primary-btn:hover {
+  background-color: var(--landing-accent-secondary);
+  color: var(--landing-text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(100, 255, 218, 0.3);
+}
+
+.landing-secondary-btn {
+  background-color: transparent;
+  border: 1px solid var(--landing-text-secondary);
+  color: var(--landing-text-primary);
+}
+
+.landing-secondary-btn:hover {
+  border-color: var(--landing-accent-primary);
+  color: var(--landing-accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Updated stats container with max width */
+.landing-stats-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  max-width: 500px;
+  justify-content: space-between;
+}
+
+.landing-stat-box {
+  transition: transform 0.3s ease;
+}
+
+.landing-stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.landing-stat-box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--landing-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.landing-stat-box p {
+  font-size: 0.875rem;
+  color: var(--landing-text-secondary);
+}
+
+.landing-right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* New SVG container - Removed background */
+.landing-svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  min-height: 350px;
+}
+
+/* Create a subtle glow effect behind the SVG */
+.landing-svg-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.15) 0%, rgba(10, 25, 47, 0) 70%);
+  z-index: 0;
+}
+
+.landing-svg-image {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+/* Discover Research Section Styles */
+.discover-research-section {
+  width: 100%;
+  background-color: var(--landing-bg-primary);
+  padding: 3rem 0;
+  margin-top: 3rem;
+}
+
+.discover-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.discover-content {
+  flex: 1;
+  color: #102a43;
+  max-width: 600px;
+}
+
+.discover-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.discover-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #486581;
+  margin-bottom: 2rem;
+}
+
+.discover-search-form {
+  display: flex;
+  width: 100%;
+}
+
+.discover-search-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+  border: 1px solid #d9e2eca0;
+  border-radius: 4px 0 0 4px;
+  overflow: hidden;
+}
+
+.discover-search-icon {
+  padding: 0 12px;
+  color: #829ab1;
+}
+
+.discover-search-input {
+  flex: 1;
+  padding: 0px 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.discover-search-button {
+  padding: 0 1.5rem;
+  height: 48px;
+  background-color: var(--landing-accent-secondary);
+  color: #102a43;
+  font-weight: 500;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.discover-search-button:hover {
+  background-color: var(--landing-accent-secondary);
+  color: white;
+}
+
+.discover-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+}
+
+.discover-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.quick-access-section {
+  background-color: var(--landing-bg-primary);
+  padding: 3rem 0;
+  color: var(--landing-text-primary);
+  width: 100%;
+  margin-top: 3rem;
+}
+  
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+  
+.section-title1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+  
+.section-title1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background-color: var(--landing-accent-primary);
+  border-radius: 3px;
+}
+  
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+  
+.quick-access-card {
+  background-color: var(--landing-card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  position: relative;
+  overflow: hidden; 
+}
+  
+.quick-access-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--landing-accent-primary);
+}
+  
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+  
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--landing-text-primary);
+}
+  
+.card-description {
+  color: var(--landing-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+  
+.card-link {
+  color: var(--landing-accent-primary);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  transition: color 0.3s ease;
+}
+  
+.card-link:hover {
+  color: var(--landing-accent-primary);
+}
+  
+.card-link .arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+  
+.card-link:hover .arrow {
+  transform: translateX(5px);
+}
+  
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .discover-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .discover-content {
+    margin-bottom: 2rem;
+  }
+  
+  .discover-search-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-main-heading {
+    font-size: 2.25rem;
+  }
+  
+  .landing-stats-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .landing-stat-box {
+    flex: 1 0 45%;
+    text-align: center;
+  }
+  
+  .quick-access-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+    
+  .section-title1 {
+    font-size: 1.75rem;
+  }
+  
+  .discover-heading {
+    font-size: 2rem;
+  }
+}
+  
+@media (max-width: 480px) {
+  .landing-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .landing-btn {
+    width: 100%;
+  }
+  
+  .landing-stat-box {
+    flex: 1 0 100%;
+  }
+  
+  .quick-access-grid {
+    grid-template-columns: 1fr;
+  }
+    
+  .quick-access-section {
+    padding: 2rem 0;
+  }
+  
+  .discover-search-form {
+    flex-direction: column;
+  }
+  
+  .discover-search-container {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .discover-search-button {
+    width: 100%;
+    border-radius: 4px;
+    height: 40px;
+  }
+}

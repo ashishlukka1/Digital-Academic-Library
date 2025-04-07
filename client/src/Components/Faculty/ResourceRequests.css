@@ -1,0 +1,130 @@
+/* ResourceRequests.css */
+:root {
+  --landing-bg-primary: #0a192f;
+  --landing-bg-secondary: #112240;
+  --landing-text-primary: #e6f1ff;
+  --landing-text-secondary: #8892b0;
+  --landing-accent-primary: #64ffda;
+  --landing-accent-secondary: #0a8c6a;
+  --landing-card-bg: rgba(16, 33, 65, 0.8);
+  
+  /* Adding missing table-specific variables using the existing palette */
+  --table-text: #0a192f;
+  --table-row-hover: rgba(10, 140, 106, 0.2);
+}
+
+.resource-requests-container {
+  background-color: #0a192f;
+  color: #e6f1ff;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.resource-header {
+  margin-bottom: 2rem;
+  border-left: 4px solid #64ffda;
+  padding-left: 1rem;
+}
+
+.resource-header h2 {
+  color: #e6f1ff;
+  font-weight: 600;
+}
+
+.resource-header p {
+  color: #8892b0;
+}
+
+.resource-table {
+  background-color: #112240;
+  color: #e6f1ff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.resource-table thead {
+  background-color: #0a192f;
+  border-bottom: 2px solid #64ffda;
+}
+
+.resource-table th {
+  color: black;
+  font-weight: 600;
+  border-bottom: none;
+  padding: 1rem;
+}
+
+.resource-table td {
+  padding: 1rem;
+  border-color: #0a192f;
+  color: black;
+}
+
+.resource-item:hover {
+  background-color: rgba(16, 33, 65, 0.8);
+}
+
+.resource-title {
+  color: #64ffda;
+  font-weight: 500;
+}
+
+.resource-badge {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.resource-badge.book {
+  background-color: #2563eb;
+  color: #e6f1ff;
+}
+
+.resource-badge.journal {
+  background-color: #7c3aed;
+  color: white;
+}
+
+.resource-badge.article {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.resource-badge.course {
+  background-color: #10b981;
+  color: white;
+}
+
+.resource-badge.other {
+  background-color: #6b7280;
+  color: white;
+}
+
+.no-description {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0a192f;
+}
+
+.spinner {
+  color: #64ffda;
+  width: 3rem;
+  height: 3rem;
+}
+
+.no-requests {
+  background-color: #112240;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 8px;
+  color: #e6f1ff;
+}

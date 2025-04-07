@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.digi-chatbot-container {
+  margin-right: 5px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Chat button */
+.digi-chat-toggle-btn {
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #2AB592;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.digi-chat-toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Chat popup */
+.digi-chat-window {
+  position: absolute;
+  bottom: 1px;
+  right: 0;
+  width: 450px;
+  height: 600px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: popup 0.3s forwards;
+  transform-origin: bottom right;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Chat header */
+.digi-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #2AB592;
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  flex: 0 0 auto;
+}
+
+.digi-chat-header h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.digi-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.digi-clear-btn, .digi-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.digi-clear-btn:hover, .digi-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Chat container */
+.digi-chat-body {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 54px); /* Full height minus header */
+  overflow: hidden;
+}
+
+.digi-messages-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+.digi-messages-scroll {
+  height: 100%;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Welcome message */
+.digi-welcome-block {
+  text-align: center;
+  margin: auto 0;
+  color: #666;
+}
+
+.digi-welcome-block h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #2AB592;
+}
+
+.digi-welcome-block p {
+  font-size: 16px;
+}
+
+/* Messages */
+.digi-message {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.digi-message.user {
+  align-self: flex-end;
+  background-color: #2AB592;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.digi-message.bot {
+  align-self: flex-start;
+  background-color: #f0f0f0;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+/* Loading indicator */
+.digi-loading {
+  padding: 10px 20px;
+}
+
+.digi-typing-indicator {
+  display: flex;
+  gap: 5px;
+}
+
+.digi-typing-indicator span {
+  height: 8px;
+  width: 8px;
+  background-color: #888;
+  border-radius: 50%;
+  display: inline-block;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.digi-typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+.digi-typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.digi-typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Input area - fixed at bottom */
+.digi-input-container {
+  padding: 12px;
+  background-color: #f9f9f9;
+  color: black;
+  border-top: 1px solid #eee;
+  flex: 0 0 auto;
+}
+
+/* Input box */
+.digi-input-group {
+  display: flex;
+  width: 100%;
+}
+
+.digi-input-group input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-size: 15px;
+}
+
+.digi-input-group input:focus {
+  border-color: #2AB592;
+}
+
+.digi-send-btn {
+  background-color: #2AB592;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.digi-send-btn:hover {
+  background-color: #239b7d;
+}
+
+.digi-send-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 500px) {
+  .digi-chat-window {
+    width: 90vw;
+    right: 5vw;
+    height: 80vh;
+  }
+}

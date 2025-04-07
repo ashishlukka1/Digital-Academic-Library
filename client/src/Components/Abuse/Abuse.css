@@ -1,0 +1,48 @@
+.abuse-warning-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .abuse-warning-modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+  
+  .abuse-warning-header {
+    background-color: #dc3545;
+    color: white;
+    padding: 15px 20px;
+  }
+  
+  .abuse-warning-header h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .abuse-warning-body {
+    padding: 20px;
+  }
+  
+  .abuse-warning-actions {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eee;
+  }
+  
+  .abuse-warning-actions button {
+    padding: 8px 16px;
+  }

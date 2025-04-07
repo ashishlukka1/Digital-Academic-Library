@@ -1,0 +1,211 @@
+/* Publish.css */
+:root {
+    --landing-bg-primary: #0a192f;
+    --landing-bg-secondary: #112240;
+    --landing-text-primary: #e6f1ff;
+    --landing-text-secondary: #8892b0;
+    --landing-accent-primary: #64ffda;
+    --landing-accent-secondary: #0a8c6a;
+    --landing-card-bg: rgba(16, 33, 65, 0.8);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Roboto', -apple-system, sans-serif;
+  }
+  
+  body {
+    background-color: var(--landing-bg-primary);
+    color: var(--landing-text-primary);
+  }
+  
+  .publish-page-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--landing-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .publish-content-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--landing-bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .publish-form-container {
+    flex: 1;
+    padding: 3rem;
+    background-color: var(--landing-bg-secondary);
+  }
+  
+  .illustration-container {
+    flex: 1;
+    background-color: var(--landing-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    /* SVG will go here */
+  }
+  
+  .form-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .form-header h2 {
+    color: var(--landing-text-primary);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .accent-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--landing-accent-primary);
+    margin-bottom: 1rem;
+    border-radius: 2px;
+  }
+  
+  .form-header p {
+    color: var(--landing-text-secondary);
+    font-size: 1.1rem;
+  }
+  
+  .publish-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .half-width {
+    flex: 1;
+  }
+  
+  label {
+    color: var(--landing-text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  
+ .form-group input {
+    background-color: rgba(10, 25, 47, 0.7);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 6px;
+    padding: 0.9rem 1rem;
+    color: var(--landing-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+ .form-group input:focus {
+    outline: none;
+    border-color: var(--landing-accent-primary);
+    box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.2);
+  }
+  
+.form-group input::placeholder {
+    color: var(--landing-text-secondary);
+    opacity: 0.6;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  button {
+    padding: 0.9rem 1.8rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+  
+  .cancel-btn {
+    background-color: transparent;
+    border: 1px solid var(--landing-text-secondary);
+    color: var(--landing-text-secondary);
+  }
+  
+  .cancel-btn:hover {
+    background-color: rgba(136, 146, 176, 0.1);
+    border-color: var(--landing-text-primary);
+    color: var(--landing-text-primary);
+  }
+  
+  .submit-btn {
+    background-color: var(--landing-accent-secondary);
+    border: none;
+    color: var(--landing-text-primary);
+  }
+  
+  .submit-btn:hover {
+    background-color: var(--landing-accent-primary);
+    color: var(--landing-bg-primary);
+    transform: translateY(-2px);
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .publish-form-container {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .publish-content-wrapper {
+      flex-direction: column;
+    }
+    
+    .illustration-container {
+      height: 200px;
+      order: -1;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .publish-form-container {
+      padding: 2rem;
+    }
+    
+    .form-row {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .form-header h2 {
+      font-size: 1.8rem;
+    }
+  }

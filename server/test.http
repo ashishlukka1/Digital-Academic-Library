@@ -1,0 +1,70 @@
+###
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+  "firstName": "Srikar",
+  "lastName": "Janjirala",
+  "email": "srikar@example.com",
+  "password": "securePass123",
+  "phoneNumber": "9876543210",
+  "role": "student",
+  "institution": {
+    "name": "VNRVJIET",
+    "department": "Information Technology",
+    "position": "Student",
+    "studentId": "IT123456",
+    "graduationYear": 2026
+  },
+  "academicProfile": {
+    "fields": ["AI", "Web Development"],
+    "interests": ["Machine Learning", "React"]
+  }
+}
+
+
+###
+GET http://localhost:5000/users/signin 
+Content-Type: application/json
+
+{
+  "email":"srikar@example.com"
+}
+
+
+
+### Create a new academic resource request
+POST http://localhost:5000/users/requests
+Content-Type: application/json
+
+{
+  "student": "66102fb4e19cb2ff6b4c61a8",  
+  "title": "Artificial Intelligence - Modern Approach",
+  "description": "Requesting this book for semester project research",
+  "resourceType": "book",
+  "institutionName": "VNR VJIET"
+}
+
+
+
+### Submit a Book Resource Request
+POST http://localhost:5000/faculty/post-book
+Content-Type: application/json
+
+{
+  "title": "AI Foundations: An Introduction-2",
+  "author": "Dr. Priya Verma",
+  "publishedDate": "2021-09-05",
+  "driveLink": "https://drive.google.com/file/d/1PTghexzPZYTgha9Wuht_e8qDKvRU-wd-/view?usp=sharing",
+  "instituteName": "IIIT Hyderabad",
+  "genre": "Machine Learning"
+}
+
+###
+GET http://localhost:5000/users/get-books
+
+
+
+### Get all academic resource requests
+GET http://localhost:5000/faculty/get-req
+

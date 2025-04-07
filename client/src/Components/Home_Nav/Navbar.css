@@ -1,0 +1,80 @@
+/* Navbar.css */
+.navbar-custom {
+    background-color: #0a1a2f;
+    padding: 15px 10px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+  
+  /* Logo styles */
+  .navbar-brand {
+    text-decoration: none;
+  }
+  
+  .brand-text {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Auth buttons container */
+  .auth-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Common button styles */
+  .btn-signin, .btn-signup {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  /* Sign In button */
+  .btn-signin {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+  }
+  
+  .btn-signin:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Sign Up button */
+  .btn-signup {
+    background-color:#64FFDA;
+    color:black;
+    border: 1px solid #3182ce;
+    text-decoration: none;
+  }
+  
+  .btn-signup:hover {
+    background-color: #2c5282;
+    border-color: #2c5282;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 480px) {
+    .auth-buttons {
+      gap: 8px;
+    }
+    
+    .btn-signin, .btn-signup {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+  }
