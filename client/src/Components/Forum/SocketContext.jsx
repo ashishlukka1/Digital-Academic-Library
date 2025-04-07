@@ -9,7 +9,7 @@ export const SocketProvider = ({ children }) => {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    // Connect to the deployed Socket.io server
+    // Connect to the Socket.io server
     const newSocket = io('https://digital-academic-library.onrender.com');
     setSocket(newSocket);
 
