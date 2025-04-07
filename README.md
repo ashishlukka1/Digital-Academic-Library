@@ -70,4 +70,5 @@ npm install
 # GEMINI_API_KEY=your_gemini_key
 
 # Start the server
-npm start
+npm run dev
+nodemon index.js
