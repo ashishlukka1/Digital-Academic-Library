@@ -85,7 +85,7 @@ const SearchLibrary = () => {
     setItemContents(null);
     
     try {
-      const response = await axios.get('http://localhost:5000/users/get-books');
+      const response = await axios.get('https://digital-academic-library.onrender.com/users/get-books');
       setResults(response.data.payload);
     } catch (err) {
       setError('There was an error fetching course materials.');

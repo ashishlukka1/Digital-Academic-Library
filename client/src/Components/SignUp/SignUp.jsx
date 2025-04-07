@@ -41,7 +41,7 @@ const SignUp = () => {
   // Check if user exists in the backend
   const checkUserExists = async (email) => {
     try {
-      const response = await axios.post('http://localhost:5000/users/check-user', { email });
+      const response = await axios.post('https://digital-academic-library.onrender.com/users/check-user', { email });
       return { 
         exists: response.data.exists, 
         user: response.data.payload 
@@ -199,7 +199,7 @@ const SignUp = () => {
     };
    console.log(userData)
     try {
-      const response = await axios.post('http://localhost:5000/users/register', userData);
+      const response = await axios.post('https://digital-academic-library.onrender.com/users/register', userData);
       
       if (response.data.success) {
         console.log('User registered:', response.data.user);

@@ -23,7 +23,7 @@ const PublishBookForm = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/faculty/post-book", formData);
+      await axios.post("https://digital-academic-library.onrender.com/faculty/post-book", formData);
       alert("Book published successfully!");
       onClose(); // close modal
     } catch (error) {
