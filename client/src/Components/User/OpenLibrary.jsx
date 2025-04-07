@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Search, Calendar, User, Filter, Book, FileText, Notebook, ArrowLeft, BookOpen, ChevronLeft, ChevronRight, PlusCircle, Wifi, WifiOff } from 'lucide-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Openlibrary.css'; // We'll define custom styles here
+import './OpenLibrary.css'; // We'll define custom styles here
 import {useNavigate} from 'react-router-dom';
 
 // Demo data for books section
