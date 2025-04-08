@@ -27,7 +27,7 @@ The **Digital Academic Library** aims to solve these challenges by offering a mo
    Separate access levels for:
    - Faculty
    - Students
-   - Public users  
+   - Other users  
    Ensuring secure and appropriate content management.
 
 4. **📩 Material Request System**  
